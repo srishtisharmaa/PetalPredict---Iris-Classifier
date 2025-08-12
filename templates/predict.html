@@ -1,0 +1,50 @@
+<!-- predict.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict - Iris Classifier</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">Iris Flower Classifier</div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/predict">Predict</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <form action="/predict" method="POST" class="predict-form">
+      <input type="text" name="sepal_length" placeholder="Sepal Length (cm) — Range: 4.3 to 7.9" required>
+      <input type="text" name="sepal_width" placeholder="Sepal Width (cm) — Range: 2.0 to 4.4" required>
+      <input type="text" name="petal_length" placeholder="Petal Length (cm) — Range: 1.0 to 6.9" required>
+      <input type="text" name="petal_width" placeholder="Petal Width (cm) — Range: 0.1 to 2.5" required>
+      <button type="submit">Predict</button>
+    </form>
+
+<!--    <form method="POST" action="/predict">-->
+<!--      <input type="text" name="sepal_length" placeholder="Sepal Length (cm)" required><br>-->
+<!--      <input type="text" name="sepal_width" placeholder="Sepal Width (cm)" required><br>-->
+<!--      <input type="text" name="petal_length" placeholder="Petal Length (cm)" required><br>-->
+<!--      <input type="text" name="petal_width" placeholder="Petal Width (cm)" required><br>-->
+<!--      <button type="submit">Predict</button>-->
+<!--    </form>-->
+
+    {% if prediction_text %}
+      <h3>{{ prediction_text }}</h3>
+    {% endif %}
+  </main>
+  <footer>
+    <p>&copy; 2025 Iris Flower Project</p>
+  </footer>
+</body>
+</html>
